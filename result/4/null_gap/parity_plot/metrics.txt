@@ -1,0 +1,5 @@
+Sample Count: 22
+--- Adsorption Energy ---
+R2: 0.2924 | MAE: 0.6516 eV | RMSE: 0.7605 eV
+--- d-band Center ---
+R2: 0.0942 | MAE: 1.5348 eV | RMSE: 2.1402 eV

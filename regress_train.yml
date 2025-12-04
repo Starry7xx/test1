@@ -1,0 +1,23 @@
+run_name: 5_regress_train # your own run name
+train_path: /media/mhx/f230303b-a03a-48de-baa3-a423f80e2a89/wwx/ML/multi-view-main-1/multiview_data/Ours/DATABASE_all_train.pkl #/define/your/path
+val_path: /media/mhx/f230303b-a03a-48de-baa3-a423f80e2a89/wwx/ML/multi-view-main-1/multiview_data/Ours/DATABASE_all_val.pkl #/define/your/path
+ckpt_save_path: /media/mhx/f230303b-a03a-48de-baa3-a423f80e2a89/wwx/ML/multi-view-main-1/multiview_data/checkpoint/ours/4/null_gap
+
+resume_path: null # checkpoint for resuming training
+resume_config: null # config for resuming training
+
+pt_ckpt_path: null # (optional) path for pre-trained checkpoint
+model_config: model/clip.yml
+
+head: pooler
+device: cuda
+num_epochs: 50
+early_stop_threshold: 4
+batch_size: 32
+lr: 1.0e-5
+warmup_steps: 0
+optimizer: AdamW # AdamW, gLLRD
+scheduler: reduceLR
+loss_fn: MSELoss
+log_interval: 10
+debug: False

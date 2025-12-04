@@ -1,0 +1,21 @@
+run_name: 2_test_clip_train # your own run anme # "debug" for debugging
+train_path: /media/mhx/f230303b-a03a-48de-baa3-a423f80e2a89/wwx/ML/multi-view-main/multiview_data/pred_data/combined_train.pkl #/define/your/path
+val_path: /media/mhx/f230303b-a03a-48de-baa3-a423f80e2a89/wwx/ML/multi-view-main/multiview_data/pred_data/combined_val.pkl #/define/your/path
+ckpt_save_path: /media/mhx/f230303b-a03a-48de-baa3-a423f80e2a89/wwx/ML/multi-view-main/multiview_data/pred_checkpoint/checkpoint/combined/2 #/define/your/path
+
+pt_ckpt_path: null # (optional) path for pre-trained checkpoint
+model_config: model/clip.yml 
+
+device: cuda
+num_epochs: 50 
+early_stop_threshold: 5  
+batch_size: 32  
+lr: 1.0e-5 
+optimizer: AdamW
+warmup_steps: 0  
+scheduler: reduceLR  # Scheduler type: reduceLR, linear, constant, etc
+log_interval: 10
+patience: 3
+gnn_emb: eq_emb # leave it as eq_emb. in this paper, we exclusively used equiformer embedding
+# chg_emb: False # False for not adding CHGNet embeddings
+debug: False
